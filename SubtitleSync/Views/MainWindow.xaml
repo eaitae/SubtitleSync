@@ -1,0 +1,117 @@
+﻿<Window x:Class="SubtitleSync.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SubtitleSync"
+        xmlns:vm="clr-namespace:SubtitleSync.ViewModels" d:DataContext="{d:DesignInstance Type=vm:MainWindowVM}"
+        mc:Ignorable="d"
+        Title="Subtitle Sync" 
+        Height="600" 
+        Width="540" 
+        MaxHeight="600" 
+        MaxWidth="540" 
+        MinHeight="600" 
+        MinWidth="540">
+
+
+    <Window.Resources>
+        <vm:MainWindowVM x:Key="vm"/>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image
+            Source="../images/Subtitle2.png" 
+            Grid.ColumnSpan="2" 
+            Margin="17,10,74,67" Grid.RowSpan="2"/>
+        <TextBox Text="{Binding OriginPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 IsReadOnly="true"
+                 Foreground="Gray"
+                 FontStyle="Italic"
+                 Grid.ColumnSpan="2" 
+                 Margin="17,18,8,18" 
+                 Grid.Row="1"/>
+        <Button Content="SELECT"
+                Command="{Binding SelectOriginCommand}"
+                Margin="15,18,15,18"
+                BorderThickness="0" 
+                FontFamily="Calibri"
+                FontWeight="Bold" Grid.Column="2" Grid.Row="1"/>
+        <TextBox Text="{Binding DestinationPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 IsReadOnly="true"
+                 Foreground="Gray"
+                 FontStyle="Italic"
+                 Grid.ColumnSpan="2" 
+                 Margin="17,18,8,18" 
+                 Grid.Row="2" />
+        <Button Content="SELECT"
+                Command="{Binding SelectDestinationCommand}"
+                Margin="15,17,15,18"
+                BorderThickness="0"
+                Grid.Row="2"
+                FontFamily="Calibri"
+                FontWeight="Black" Grid.Column="2"/>
+        <TextBox Text="{Binding TimeSpan, StringFormat=\{0:hh\\:mm\\:ss\\.fff\}}"
+                 Grid.ColumnSpan="2" 
+                 Margin="10,18,15,18" 
+                 Grid.Row="3" Grid.Column="1">
+        </TextBox>
+        <ComboBox SelectedItem="{Binding Path=SelectedEncoding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=ComboBoxValues, Mode=OneTime}"
+                  SelectedValuePath="Key"
+                  DisplayMemberPath="Value"
+                  Margin="10,17,15,17" 
+                  Grid.Row="4" 
+                  Grid.Column="1" 
+                  Grid.ColumnSpan="2" 
+                  FontFamily="Calibri"
+                  FontSize="15"/>
+        <Button Content="EXECUTE"
+                Command="{Binding ExecuteCommand}"
+                CommandParameter="{Binding OriginPath}"
+                Grid.Column="1"
+                BorderThickness="0"
+                FontWeight="Bold"
+                Margin="10,15,10,15"
+                Grid.Row="5"/>
+        <Button Content="preview"
+                Command="{Binding OpenPreviewWindowCommand}"
+                Grid.Column="1"
+                BorderThickness="0"
+                Margin="10, 1, 10, 30"
+                FontSize="15"
+                Foreground="#E0771C"
+                Grid.Row="6"
+                Background="Transparent"/>
+        <TextBlock Text="TIMESPAN:"
+            Margin="17,17,13,18"
+            TextAlignment="Center"
+            FontSize="15"       
+            Grid.Row="3"
+            FontWeight="Bold"
+            FontFamily="Calibri"
+            Background="White" VerticalAlignment="Center"/>
+        <TextBlock Text="ENCODING:"
+            Margin="17,0,13,0"
+            TextAlignment="Center"
+            FontSize="15"       
+            Grid.Row="4"
+            FontWeight="Bold"
+            FontFamily="Calibri"
+            Background="White" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
