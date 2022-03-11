@@ -28,7 +28,7 @@ The logic I used for the shifter was simple. I had one problem and created the s
 
 ◽ Thinking about UX  
 
-- When we think about WPF, we know that INotifyPropertyChanged and ICommand are very important. By using then I was able to block the buttons, being sure that the user would just be capable of executing or previewing the file if the necessary objects were set. 
+- When we think about WPF, we know that INotifyPropertyChanged and ICommand are very important. By using them I was able to block the buttons, being sure that the user would just be capable of executing or previewing the file if the necessary objects were set. 
 
 Here is when the buttons are blocked
 
