@@ -52,5 +52,8 @@ Ah! Before I forget, I also formated the timespan placeholder so the user can be
 
 ◽ Some DETAILS 
 
-(to be update soon)
+I've set an icon to represent the whole application and a second one only for the Preview Window so it can be differentiated. Talking about the Preview Window, it has the scrollbar visible. It helps case the user doesn't have a mouse scroll button.  
 
+![Windows](https://media.discordapp.net/attachments/941386143168098406/951875052188631120/Untitleasdasdd.png)
+
+![Icon](https://media.discordapp.net/attachments/941386143168098406/951875051853054042/Untitleasdaasdsdd.png)
