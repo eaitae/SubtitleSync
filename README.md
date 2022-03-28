@@ -28,13 +28,13 @@ The logic I used for the shifter was simple. I had one problem and created the s
 
 ◽ Thinking about UX  
 
-- When we think about WPF, we know that INotifyPropertyChanged and ICommand are very important. By using them I was able to block the buttons, being sure that the user would just be capable of executing or previewing the file if the necessary objects were set. 
+- When we think about WPF, we know that INotifyPropertyChanged and ICommand are very important. By using them I was able to block the buttons, being sure that the user could execute or preview the file only if the necessary objects were set. 
 
-Here is when the buttons are blocked
+Here we can see when the buttons are blocked:
 
 ![Buttons1](https://media.discordapp.net/attachments/941386143168098406/951585075022139472/Untitlasdasdesdasdd.png)
 
-And when it's possible to execute and preview the file 
+And when it's possible to execute and preview the file:  
 
 ![Buttons2](https://media.discordapp.net/attachments/941386143168098406/951585074820833340/Untitlasdasdessdasdd.png)
 
@@ -42,7 +42,7 @@ And when it's possible to execute and preview the file
 
 'Owner = Application.Current.MainWindow;' 
 
-- When choosing the destination path, the user has the choice to create a new file or to use one that already exists. It is possible by using the SaveFileDialog instead of the OpenFileDialog (which one I've used to select the origin path). 
+- When choosing the destination path, the user can decide between creating a new file or use one that already exists. It is possible by using the SaveFileDialog instead of the OpenFileDialog (which one I've used to select the origin path). 
 
 - Finally, to be sure the user wouldn't change the origin or destination path by mistake, I set the property IsReadOnly to true in every textbox that I was using as a path display. 
 
@@ -58,7 +58,7 @@ I've set an icon to represent the whole application and a second one only for th
 
 ![Icon](https://media.discordapp.net/attachments/941386143168098406/951875051853054042/Untitleasdaasdsdd.png)
 
-I wanted to be sure the user would know when the execution was done. For that, I used a message.box and I set it to be the type "question", so I could notify that the execution was done and also ask what the user would like to do next. 
+I wanted to be sure the user would know when the execution was done. For that, I used a message.box and I set it to be the type "question", so I could notify when the execution was done and also ask what the user would like to do next. 
 
 ![MessageBox](https://media.discordapp.net/attachments/941386143168098406/951876189818064916/Untitlgeasdaasdsdd.png)
 
